@@ -1,0 +1,28 @@
+{
+  "name": "node-vad",
+  "author": {
+    "name": "Snirpo"
+  },
+  "description": "WebRTC-based Voice Activity Detection library",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "main": "./index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.14.3"
+  },
+  "dependencies": {
+    "bindings": "1.2.1",
+    "nan": "^2.5.0"
+  },
+  "gypfile": true,
+  "maintainers": [
+    {
+      "name": "snirpo",
+      "email": "snirpo@gmail.com"
+    }
+  ],
+  "directories": {}
+}
