@@ -4,7 +4,7 @@
     "name": "Snirpo"
   },
   "description": "WebRTC-based Voice Activity Detection library",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "install": "node-gyp rebuild"
   },
