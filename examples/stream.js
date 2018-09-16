@@ -3,6 +3,7 @@ const fs = require("fs");
 
 const inputStream = fs.createReadStream("demo_pcm_s16_16000.raw");
 const vadStream = VAD.createStream({
+    mode: VAD.Mode.NORMAL,
     audioFrequency: 16000,
     debounceTime: 1000
 });
