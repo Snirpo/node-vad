@@ -3,8 +3,8 @@
   "author": {
     "name": "Snirpo"
   },
-  "description": "WebRTC-based Voice Activity Detection library",
-  "version": "0.0.1",
+  "description": "Voice Activity Detection library for Node",
+  "version": "1.0.0",
   "scripts": {
     "install": "node-gyp rebuild"
   },
