@@ -4,7 +4,7 @@
     "name": "Snirpo"
   },
   "description": "Voice Activity Detection library for Node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "install": "node-gyp rebuild"
   },
