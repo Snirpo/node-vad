@@ -6,7 +6,10 @@
   "description": "Voice Activity Detection library for Node",
   "version": "1.0.2",
   "scripts": {
-    "install": "node-gyp rebuild"
+    "install": "node-gyp rebuild",
+    "release-patch": "npm version patch && npm publish",
+    "release-minor": "npm version minor && npm publish",
+    "release-major": "npm version major && npm publish"
   },
   "main": "./index.js",
   "license": "MIT",
