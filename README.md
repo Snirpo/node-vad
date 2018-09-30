@@ -24,39 +24,60 @@ Supported sample rates are:
 
 Create a new `VAD` object using the given mode.
 
-#### .processAudio(samples, samplerate, callback)
+#### .processAudio(samples, samplerate)
 
 Analyse the given samples (`Buffer` object containing 16bit signed values) and notify the detected voice
-event via `callback` and event.
+event via promise.
 
-#### .processAudioFloat(samples, samplerate, callback)
+#### .processAudioFloat(samples, samplerate)
 
 Analyse the given samples (`Buffer` object containing 32bit normalized float values) and notify the detected voice
-event via `callback` and event.
+event via promise.
 
 #### static .createStream(options)
 
 Create an stream for voice activation detection.
 
+##### Options
+
+```javascript
+{
+    mode: VAD.Mode.NORMAL, // VAD mode, see above
+    audioFrequency: 16000, // Audiofrequency, see above
+    debounceTime: 1000 // Time for debouncing speech active state, default 1 second
+}
+```
+
+##### Stream output example:
+```javascript
+{ 
+    time: 14520, // Current seek time in audio
+    audioData: <Buffer>, // Original audio data
+    speech: { 
+        state: true, // Current state of speech
+        start: false, // True on chunk when speech starts
+        end: false, // True on chunk when speech ends
+        startTime: 12360, // Time when speech started
+        duration: 2160 // Duration of current speech block
+    } 
+}
+```
 
 ### Event codes
 
-Event codes are passed to the `processAudio` callback and to event handlers subscribed to the general
-'event'-event.
+Event codes are passed to the `processAudio` promises.
 
 #### VAD.Event.ERROR
 
-Constant for voice detection errors. Passed to 'error' event handlers.
+Constant for voice detection errors.
 
 #### VAD.Event.SILENCE
 
 Constant for voice detection results with no detected voices.
-Passed to 'silence' event handlers.
 
 #### VAD.Event.VOICE
 
 Constant for voice detection results with detected voice.
-Passed to 'voice' event handlers.
 
 #### VAD.Event.NOISE
 
@@ -132,7 +153,6 @@ const vadStream = VAD.createStream({
 
 inputStream.pipe(vadStream).on("data", console.log);
 ```
-
 
 ## License
 
