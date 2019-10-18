@@ -18,9 +18,9 @@
     "npm": ">=2.11.1"
   },
   "dependencies": {
-    "bindings": "1.2.1",
+    "bindings": "^1.5.0",
     "nan": "^2.14.0",
-    "util-promisifyall": "^1.0.4"
+    "util-promisifyall": "^1.0.6"
   },
   "gypfile": true,
   "maintainers": [
